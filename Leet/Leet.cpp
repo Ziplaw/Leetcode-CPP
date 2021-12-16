@@ -2,25 +2,26 @@
 #include <iostream>
 #include "LinkedListAddTwoNumbers.h";
 
-#define log(x) std::cout << x << std::endl;
+#define LOG(x) std::cout << x << std::endl;
 
 int main()
 {
 
-    //[2,4,3]
-    //[5, 6, 4]
+    //l1 = [2, 5, 3]
+    //l2 = [5, 6, 4]
+    //o1 = [7, 1, 0, 1]
 
-    auto l1 = ListNode(2, &ListNode(4, &ListNode(3)));
+    auto l1 = ListNode(2, &ListNode(5, &ListNode(3)));
     auto l2 = ListNode(5, &ListNode(6, &ListNode(6)));
 
     auto l3 = LinkedListAddTwoNumbers().AddTwoNumbers(&l1, &l2);
+    ListNode* parent = l3;
 
     while (l3 != nullptr)
     {
-        log(l3->val);
+        LOG(l3->val);
         l3 = l3->next;
     }
 
-    l3->Free();
-    free(l3);
+    delete parent->Free();
 }

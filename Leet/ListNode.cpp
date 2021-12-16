@@ -9,6 +9,6 @@ ListNode::ListNode(int x) : val(x), next(nullptr) {}
 ListNode::ListNode(int x, ListNode* n) : val(x), next(n) {}
 ListNode* ListNode::Free()
 {
-	if (next != nullptr) free(next->Free());
+	if (next != nullptr) delete next->Free();
 	return this;
 }
