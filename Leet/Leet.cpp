@@ -1,8 +1,7 @@
-
 #include <iostream>
 #include "LinkedListAddTwoNumbers.h";
 
-#define LOG(x) std::cout << x << std::endl;
+#define LOG(x) std::cout << (x) << std::endl;
 
 int main()
 {
